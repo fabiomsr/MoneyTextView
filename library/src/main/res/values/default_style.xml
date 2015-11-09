@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CurrencyTextViewDefaultStyle">
+        <item name="format">@string/default_format</item>
+        <item name="symbol">$</item>
+        <item name="decimalSeparator">\'</item>
+
+        <item name="baseTextSize">18sp</item>
+        <item name="baseTextColor">#000000</item>
+
+        <item name="includeDecimalSeparator">true</item>
+        <item name="decimalUnderline">false</item>
+        <item name="symbolMargin">1dp</item>
+        <item name="decimalMargin">1dp</item>
+    </style>
+
+</resources>
