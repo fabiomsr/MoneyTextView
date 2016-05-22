@@ -24,6 +24,16 @@
             <enum name="bottom" value="8"/>
         </attr>
 
+        <attr name="gravity">
+            <enum name="left" value="0x01"/>
+            <enum name="right" value="0x02"/>
+            <enum name="top" value="0x04"/>
+            <enum name="bottom" value="0x08"/>
+            <enum name="centerVertical" value="0x16"/>
+            <enum name="centerHorizontal" value="0x32"/>
+            <enum name="center" value="0x48"/>
+        </attr>
+
         <attr name="baseTextColor" format="color"/>
         <attr name="symbolTextColor" format="color"/>
         <attr name="decimalTextColor" format="color"/>

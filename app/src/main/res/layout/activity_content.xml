@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_weight="2"
+              android:orientation="horizontal"
+    >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+
+        <org.fabiomsr.currencytextview.CurrencyTextView
+            style="@style/CurrencyTextViewStyleA"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/color_one"
+            app:baseTextColor="@color/color_two"
+            app:amount="125.3558"
+            />
+
+        <org.fabiomsr.currencytextview.CurrencyTextView
+            style="@style/CurrencyTextViewStyleC"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/color_two"
+            app:baseTextColor="@color/color_one"
+            app:amount="125.3558"
+            />
+
+        <org.fabiomsr.currencytextview.CurrencyTextView
+            style="@style/CurrencyTextViewStyleE"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/color_one"
+            app:baseTextColor="@color/color_two"
+            app:amount="125.3558"
+            />
+
+        <org.fabiomsr.currencytextview.CurrencyTextView
+            style="@style/CurrencyTextViewStyleG"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/color_two"
+            app:baseTextColor="@color/color_one"
+            app:amount="125.3558"
+            />
+
+        <org.fabiomsr.currencytextview.CurrencyTextView
+            style="@style/CurrencyTextViewStyleI"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/color_one"
+            app:baseTextColor="@color/color_two"
+            app:amount="125.3558"
+            />
+
+        <org.fabiomsr.currencytextview.CurrencyTextView
+            style="@style/CurrencyTextViewStyleK"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/color_two"
+            app:baseTextColor="@color/color_one"
+            app:amount="125.3558"
+            />
+
+        <org.fabiomsr.currencytextview.CurrencyTextView
+            style="@style/CurrencyTextViewStyleM"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/color_one"
+            app:baseTextColor="@color/color_two"
+            app:amount="125.3558"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+
+        <org.fabiomsr.currencytextview.CurrencyTextView
+            style="@style/CurrencyTextViewStyleB"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/color_two"
+            app:baseTextColor="@color/color_one"
+            app:amount="125.3558"
+            />
+
+        <org.fabiomsr.currencytextview.CurrencyTextView
+            style="@style/CurrencyTextViewStyleD"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/color_one"
+            app:baseTextColor="@color/color_two"
+            app:amount="125.3558"
+            />
+
+        <org.fabiomsr.currencytextview.CurrencyTextView
+            style="@style/CurrencyTextViewStyleF"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/color_two"
+            app:baseTextColor="@color/color_one"
+            app:amount="125.3558"
+            />
+
+        <org.fabiomsr.currencytextview.CurrencyTextView
+            style="@style/CurrencyTextViewStyleH"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/color_one"
+            app:baseTextColor="@color/color_two"
+            app:amount="125.3558"
+            />
+
+        <org.fabiomsr.currencytextview.CurrencyTextView
+            style="@style/CurrencyTextViewStyleJ"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/color_two"
+            app:baseTextColor="@color/color_one"
+            app:amount="125.3558"
+            />
+
+        <org.fabiomsr.currencytextview.CurrencyTextView
+            style="@style/CurrencyTextViewStyleL"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/color_one"
+            app:baseTextColor="@color/color_two"
+            app:amount="125.3558"
+            />
+
+        <org.fabiomsr.currencytextview.CurrencyTextView
+            style="@style/CurrencyTextViewStyleN"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/color_two"
+            app:baseTextColor="@color/color_one"
+            app:amount="125.3558"
+            />
+    </LinearLayout>
+
+</LinearLayout>
