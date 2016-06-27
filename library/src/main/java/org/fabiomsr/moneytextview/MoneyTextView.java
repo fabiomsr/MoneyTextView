@@ -1,4 +1,4 @@
-package org.fabiomsr.currencytextview;
+package org.fabiomsr.moneytextview;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -10,15 +10,21 @@ import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.text.TextPaint;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
+
+import org.fabiomsr.moneytextview.R;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 
-public class CurrencyTextView extends View {
+/**
+ * Created by Fabiomsr on 20/5/16.
+ */
+public class MoneyTextView extends View {
 
   private static final int GRAVITY_START             = 1;
   private static final int GRAVITY_END               = 2;
@@ -26,6 +32,7 @@ public class CurrencyTextView extends View {
   private static final int GRAVITY_BOTTOM            = 8;
   private static final int GRAVITY_CENTER_VERTICAL   = 16;
   private static final int GRAVITY_CENTER_HORIZONTAL = 32;
+  private static final float MIN_PADDING             = 2;
 
   private TextPaint     mTextPaint;
   private DecimalFormat mDecimalFormat;
@@ -40,28 +47,27 @@ public class CurrencyTextView extends View {
   private float         mSymbolMargin;
   private float         mDecimalMargin;
   private boolean       mIncludeDecimalSeparator;
+  private int           mWidth;
+  private int           mHeight;
+  private float         mTextPaintRoomSize;
 
-  private int   mWidth;
-  private int   mHeight;
-  private float mTextPaintRoomSize;
-
-  public CurrencyTextView(Context context) {
+  public MoneyTextView(Context context) {
     super(context);
     init(context, null);
   }
 
-  public CurrencyTextView(Context context, AttributeSet attrs) {
+  public MoneyTextView(Context context, AttributeSet attrs) {
     super(context, attrs);
     init(context, attrs);
   }
 
-  public CurrencyTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+  public MoneyTextView(Context context, AttributeSet attrs, int defStyleAttr) {
     super(context, attrs, defStyleAttr);
     init(context, attrs);
   }
 
   @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-  public CurrencyTextView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+  public MoneyTextView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
     super(context, attrs, defStyleAttr, defStyleRes);
     init(context, attrs);
   }
@@ -77,29 +83,33 @@ public class CurrencyTextView extends View {
     Resources r = getResources();
     mTextPaintRoomSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mTextPaint.density, r.getDisplayMetrics());
 
-    TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CurrencyTextView,
-                                                                      0, R.style.CurrencyTextViewDefaultStyle);
+    TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.MoneyTextView,
+                                                                      0, R.style.MoneyTextViewDefaultStyle);
 
     try {
-      mSymbolSection.text = typedArray.getString(R.styleable.CurrencyTextView_symbol);
-      mAmount = typedArray.getFloat(R.styleable.CurrencyTextView_amount, 0);
-      mGravity = typedArray.getInt(R.styleable.CurrencyTextView_gravity, GRAVITY_CENTER_VERTICAL | GRAVITY_CENTER_HORIZONTAL);
-      mSymbolGravity = typedArray.getInt(R.styleable.CurrencyTextView_symbolGravity, GRAVITY_TOP | GRAVITY_START);
-      mDecimalGravity = typedArray.getInt(R.styleable.CurrencyTextView_decimalGravity, GRAVITY_TOP);
-      mIncludeDecimalSeparator = typedArray.getBoolean(R.styleable.CurrencyTextView_includeDecimalSeparator, true);
-      mSymbolMargin = typedArray.getDimensionPixelSize(R.styleable.CurrencyTextView_symbolMargin, 0);
-      mDecimalMargin = typedArray.getDimensionPixelSize(R.styleable.CurrencyTextView_decimalMargin, 0);
-      mIntegerSection.textSize = typedArray.getDimension(R.styleable.CurrencyTextView_baseTextSize, 12f);
-      mSymbolSection.textSize = typedArray.getDimension(R.styleable.CurrencyTextView_symbolTextSize, mIntegerSection.textSize);
-      mDecimalSection.textSize = typedArray.getDimension(R.styleable.CurrencyTextView_decimalDigitsTextSize, mIntegerSection.textSize);
-      mIntegerSection.color = typedArray.getInt(R.styleable.CurrencyTextView_baseTextColor, 0);
-      mSymbolSection.color = typedArray.getInt(R.styleable.CurrencyTextView_symbolTextColor, mIntegerSection.color);
-      mDecimalSection.color = typedArray.getInt(R.styleable.CurrencyTextView_decimalTextColor, mIntegerSection.color);
-      mDecimalSection.drawUnderline = typedArray.getBoolean(R.styleable.CurrencyTextView_decimalUnderline, false);
+      mSymbolSection.text = typedArray.getString(R.styleable.MoneyTextView_symbol);
+      mAmount = typedArray.getFloat(R.styleable.MoneyTextView_amount, 0);
+      mGravity = typedArray.getInt(R.styleable.MoneyTextView_gravity, GRAVITY_CENTER_VERTICAL | GRAVITY_CENTER_HORIZONTAL);
+      mSymbolGravity = typedArray.getInt(R.styleable.MoneyTextView_symbolGravity, GRAVITY_TOP | GRAVITY_START);
+      mDecimalGravity = typedArray.getInt(R.styleable.MoneyTextView_decimalGravity, GRAVITY_TOP);
+      mIncludeDecimalSeparator = typedArray.getBoolean(R.styleable.MoneyTextView_includeDecimalSeparator, true);
+      mSymbolMargin = typedArray.getDimensionPixelSize(R.styleable.MoneyTextView_symbolMargin, 0);
+      mDecimalMargin = typedArray.getDimensionPixelSize(R.styleable.MoneyTextView_decimalMargin, 0);
+      mIntegerSection.textSize = typedArray.getDimension(R.styleable.MoneyTextView_baseTextSize, 12f);
+      mSymbolSection.textSize = typedArray.getDimension(R.styleable.MoneyTextView_symbolTextSize, mIntegerSection.textSize);
+      mDecimalSection.textSize = typedArray.getDimension(R.styleable.MoneyTextView_decimalDigitsTextSize, mIntegerSection.textSize);
+      mIntegerSection.color = typedArray.getInt(R.styleable.MoneyTextView_baseTextColor, 0);
+      mSymbolSection.color = typedArray.getInt(R.styleable.MoneyTextView_symbolTextColor, mIntegerSection.color);
+      mDecimalSection.color = typedArray.getInt(R.styleable.MoneyTextView_decimalTextColor, mIntegerSection.color);
+      mDecimalSection.drawUnderline = typedArray.getBoolean(R.styleable.MoneyTextView_decimalUnderline, false);
 
-      String format           = typedArray.getString(R.styleable.CurrencyTextView_format);
-      String decimalSeparator = typedArray.getString(R.styleable.CurrencyTextView_decimalSeparator);
-      String fontPath         = typedArray.getString(R.styleable.CurrencyTextView_fontPath);
+
+      setPadding(getMinPadding(getPaddingLeft()), getMinPadding(getPaddingTop()),
+                 getMinPadding(getPaddingRight()), getMinPadding(getPaddingBottom()));
+
+      String format           = typedArray.getString(R.styleable.MoneyTextView_format);
+      String decimalSeparator = typedArray.getString(R.styleable.MoneyTextView_decimalSeparator);
+      String fontPath         = typedArray.getString(R.styleable.MoneyTextView_fontPath);
       if (fontPath != null) {
         Typeface typeface = Typeface.createFromAsset(context.getAssets(), fontPath);
         mTextPaint.setTypeface(typeface);
@@ -112,7 +122,7 @@ public class CurrencyTextView extends View {
       mDecimalFormat = new DecimalFormat(format);
       DecimalFormatSymbols decimalFormatSymbol = new DecimalFormatSymbols(Locale.getDefault());
 
-      if (decimalSeparator != null && !decimalSeparator.isEmpty()) {
+      if (!TextUtils.isEmpty(decimalSeparator)) {
         mDecimalSeparator = decimalSeparator.charAt(0);
       } else {
         mDecimalSeparator = context.getString(R.string.default_decimal_separator).charAt(0);
@@ -144,7 +154,7 @@ public class CurrencyTextView extends View {
   private void createTextFromAmount() {
     String formattedAmount = mDecimalFormat.format(mAmount);
 
-    int separatorIndex = formattedAmount.indexOf(mDecimalSeparator);
+    int separatorIndex = formattedAmount.lastIndexOf(mDecimalSeparator);
 
     if (separatorIndex > -1) {
       mIntegerSection.text = formattedAmount.substring(0, separatorIndex);
@@ -162,9 +172,13 @@ public class CurrencyTextView extends View {
     int heightMode = MeasureSpec.getMode(heightMeasureSpec);
     int heightSize = MeasureSpec.getSize(heightMeasureSpec);
 
+    mSymbolSection.calculateBounds(mTextPaint);
     mIntegerSection.calculateBounds(mTextPaint);
     mDecimalSection.calculateBounds(mTextPaint);
-    mSymbolSection.calculateBounds(mTextPaint);
+
+    if(mDecimalSection.text.length() > 1  && !Character.isDigit(mDecimalSection.text.charAt(0))) {
+      mDecimalSection.calculateHeightFrom(mTextPaint, 1);
+    }
 
     switch (widthMode) {
       case MeasureSpec.EXACTLY:
@@ -195,19 +209,19 @@ public class CurrencyTextView extends View {
     int width = (int) (mIntegerSection.width + mDecimalSection.width + mSymbolSection.width
         + mSymbolMargin + mDecimalMargin);
 
-    if((mGravity & GRAVITY_START) == GRAVITY_START){
+    if ((mGravity & GRAVITY_START) == GRAVITY_START) {
       fromX = getPaddingLeft();
-    }else if((mGravity & GRAVITY_END) == GRAVITY_END){
+    } else if ((mGravity & GRAVITY_END) == GRAVITY_END) {
       fromX = mWidth - width - getPaddingRight();
-    } else{
+    } else {
       fromX = (mWidth >> 1) - (width >> 1);
     }
 
-    if((mGravity & GRAVITY_TOP) == GRAVITY_TOP){
+    if ((mGravity & GRAVITY_TOP) == GRAVITY_TOP) {
       fromY = getPaddingTop() + mIntegerSection.height;
-    }else if((mGravity & GRAVITY_BOTTOM) == GRAVITY_BOTTOM){
+    } else if ((mGravity & GRAVITY_BOTTOM) == GRAVITY_BOTTOM) {
       fromY = mHeight - getPaddingBottom();
-    } else{
+    } else {
       fromY = (mHeight >> 1) + (mIntegerSection.height >> 1);
     }
 
@@ -224,13 +238,14 @@ public class CurrencyTextView extends View {
         mIntegerSection.height - mDecimalSection.height : 0);
   }
 
-  private void calculateX(int from , int symbolGravityXAxis) {
+  private void calculateX(int from, int symbolGravityXAxis) {
     if (symbolGravityXAxis == GRAVITY_START) {
       mSymbolSection.x = from;
       mIntegerSection.x = (int) (mSymbolSection.x + mSymbolSection.width + mSymbolMargin);
       mDecimalSection.x = (int) (mIntegerSection.x + mIntegerSection.width + mDecimalMargin);
     } else {
-      mIntegerSection.x = from; getPaddingLeft();
+      mIntegerSection.x = from;
+      getPaddingLeft();
       mDecimalSection.x = (int) (mIntegerSection.x + mIntegerSection.width + mDecimalMargin);
       mSymbolSection.x = (int) (mDecimalSection.x + mDecimalSection.width + mSymbolMargin);
     }
@@ -252,7 +267,7 @@ public class CurrencyTextView extends View {
     mTextPaint.setColor(section.color);
     mTextPaint.setUnderlineText(section.drawUnderline);
 
-    canvas.drawText(section.text, section.x - mTextPaintRoomSize, section.y, mTextPaint);
+    canvas.drawText(section.text, section.x - mTextPaintRoomSize*2, section.y-mTextPaintRoomSize/2, mTextPaint);
   }
 
 
@@ -302,14 +317,25 @@ public class CurrencyTextView extends View {
 
   public void setBaseColor(int color) {
     mIntegerSection.color = color;
+    invalidate();
   }
 
   public void setSymbolColor(int color) {
     mSymbolSection.color = color;
+    invalidate();
   }
 
   public void setDecimalsColor(int color) {
     mDecimalSection.color = color;
+    invalidate();
+  }
+
+  private int getMinPadding(int padding) {
+    if(padding == 0){
+      return (int) (MIN_PADDING * Resources.getSystem().getDisplayMetrics().density);
+    }
+
+    return padding;
   }
 
   private static class Section {
@@ -331,6 +357,12 @@ public class CurrencyTextView extends View {
       paint.setTextSize(textSize);
       paint.getTextBounds(text, 0, text.length(), bounds);
       width = bounds.width();
+      height = bounds.height();
+    }
+
+    public void calculateHeightFrom(TextPaint paint, int from) {
+      paint.setTextSize(textSize);
+      paint.getTextBounds(text, from, text.length(), bounds);
       height = bounds.height();
     }
   }

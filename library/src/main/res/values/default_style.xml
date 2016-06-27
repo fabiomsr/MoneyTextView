@@ -1,96 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="CurrencyTextViewDefaultStyle">
-        <item name="format">@string/default_format</item>
-        <item name="symbol">$</item>
+    <style name="MoneyTextViewDefaultStyle">
+        <item name="format">@string/default_format</item> <!---->
+        <item name="symbol">$</item><!---->
         <item name="decimalSeparator">\'</item>
         <item name="baseTextSize">18sp</item>
         <item name="baseTextColor">#000000</item>
-        <item name="symbolTextSize">10sp</item>
         <item name="includeDecimalSeparator">true</item>
         <item name="decimalUnderline">false</item>
-        <item name="symbolMargin">1dp</item>
-        <item name="decimalMargin">1dp</item>
+        <item name="symbolMargin">2dp</item><!---->
+        <item name="decimalMargin">2dp</item>
     </style>
 
 
-    <style name="CurrencyTextViewStyleA">
+    <style name="MoneyTextViewStyleA">
         <item name="baseTextSize">18sp</item>
-        <item name="symbolTextSize">18sp</item>
-        <item name="decimalDigitsTextSize">18sp</item>
         <item name="symbolGravity">start|bottom</item>
         <item name="decimalGravity">bottom</item>
     </style>
 
-    <style name="CurrencyTextViewStyleB" parent="CurrencyTextViewStyleA">
+    <style name="MoneyTextViewStyleB" parent="MoneyTextViewStyleA">
         <item name="symbolGravity">end|bottom</item>
     </style>
 
 
 
-
-    <style name="CurrencyTextViewStyleC" parent="CurrencyTextViewStyleA">
+    <style name="MoneyTextViewStyleC" parent="MoneyTextViewStyleA">
         <item name="decimalDigitsTextSize">12sp</item>
         <item name="decimalGravity">top</item>
     </style>
 
-    <style name="CurrencyTextViewStyleD" parent="CurrencyTextViewStyleB">
+    <style name="MoneyTextViewStyleD" parent="MoneyTextViewStyleB">
         <item name="decimalDigitsTextSize">12sp</item>
         <item name="decimalGravity">top</item>
     </style>
 
 
 
-    <style name="CurrencyTextViewStyleE" parent="CurrencyTextViewStyleA">
+    <style name="MoneyTextViewStyleE" parent="MoneyTextViewStyleA">
         <item name="symbolTextSize">12sp</item>
         <item name="symbolGravity">start|top</item>
     </style>
 
-    <style name="CurrencyTextViewStyleF" parent="CurrencyTextViewStyleB">
+    <style name="MoneyTextViewStyleF" parent="MoneyTextViewStyleB">
         <item name="symbolTextSize">12sp</item>
         <item name="symbolGravity">end|top</item>
     </style>
 
 
 
-    <style name="CurrencyTextViewStyleG" parent="CurrencyTextViewStyleC">
+    <style name="MoneyTextViewStyleG" parent="MoneyTextViewStyleC">
         <item name="symbolTextSize">12sp</item>
         <item name="symbolGravity">start|top</item>
     </style>
 
-    <style name="CurrencyTextViewStyleH" parent="CurrencyTextViewStyleD">
+    <style name="MoneyTextViewStyleH" parent="MoneyTextViewStyleD">
         <item name="symbolTextSize">12sp</item>
         <item name="symbolGravity">end|top</item>
     </style>
 
 
 
-    <style name="CurrencyTextViewStyleI" parent="CurrencyTextViewStyleA">
+    <style name="MoneyTextViewStyleI" parent="MoneyTextViewStyleA">
         <item name="symbol"></item>
     </style>
 
-    <style name="CurrencyTextViewStyleJ" parent="CurrencyTextViewStyleB">
+    <style name="MoneyTextViewStyleJ" parent="MoneyTextViewStyleB">
         <item name="symbol"></item>
     </style>
 
 
-    <style name="CurrencyTextViewStyleK" parent="CurrencyTextViewStyleC">
+    <style name="MoneyTextViewStyleK" parent="MoneyTextViewStyleC">
         <item name="decimalUnderline">true</item>
         <item name="includeDecimalSeparator">false</item>
         <item name="decimalMargin">4dp</item>
         <item name="symbolMargin">2dp</item>
     </style>
 
-    <style name="CurrencyTextViewStyleL" parent="CurrencyTextViewStyleK">
+    <style name="MoneyTextViewStyleL" parent="MoneyTextViewStyleK">
         <item name="symbolGravity">end|top</item>
     </style>
 
-    <style name="CurrencyTextViewStyleM" parent="CurrencyTextViewStyleG">
+    <style name="MoneyTextViewStyleM" parent="MoneyTextViewStyleG">
         <item name="symbolGravity">start|bottom</item>
     </style>
 
-    <style name="CurrencyTextViewStyleN" parent="CurrencyTextViewStyleH">
+    <style name="MoneyTextViewStyleN" parent="MoneyTextViewStyleH">
         <item name="symbolGravity">end|bottom</item>
     </style>
 </resources>

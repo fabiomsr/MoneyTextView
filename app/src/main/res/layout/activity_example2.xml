@@ -5,6 +5,7 @@
               android:layout_height="match_parent"
               android:layout_weight="2"
               android:orientation="horizontal"
+              android:background="@color/color_one"
     >
 
     <LinearLayout
@@ -14,74 +15,88 @@
         android:orientation="vertical"
         >
 
-        <org.fabiomsr.currencytextview.CurrencyTextView
-            style="@style/CurrencyTextViewStyleA"
+        <org.fabiomsr.moneytextview.MoneyTextView
+            style="@style/MoneyTextViewStyleA"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/color_one"
             app:baseTextColor="@color/color_two"
             app:amount="125.3558"
+            app:baseTextSize="28sp"
+            app:symbol="¥"
             />
 
-        <org.fabiomsr.currencytextview.CurrencyTextView
-            style="@style/CurrencyTextViewStyleC"
+        <org.fabiomsr.moneytextview.MoneyTextView
+            style="@style/MoneyTextViewStyleC"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/color_two"
-            app:baseTextColor="@color/color_one"
-            app:amount="125.3558"
-            />
-
-        <org.fabiomsr.currencytextview.CurrencyTextView
-            style="@style/CurrencyTextViewStyleE"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@color/color_one"
             app:baseTextColor="@color/color_two"
             app:amount="125.3558"
+            app:baseTextSize="28sp"
+            app:decimalDigitsTextSize="18sp"
+            app:symbol="¥"
             />
 
-        <org.fabiomsr.currencytextview.CurrencyTextView
-            style="@style/CurrencyTextViewStyleG"
+        <org.fabiomsr.moneytextview.MoneyTextView
+            style="@style/MoneyTextViewStyleE"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/color_two"
-            app:baseTextColor="@color/color_one"
-            app:amount="125.3558"
-            />
-
-        <org.fabiomsr.currencytextview.CurrencyTextView
-            style="@style/CurrencyTextViewStyleI"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@color/color_one"
             app:baseTextColor="@color/color_two"
             app:amount="125.3558"
+            app:baseTextSize="28sp"
+            app:symbolTextSize="18sp"
+            app:symbol="€"
             />
 
-        <org.fabiomsr.currencytextview.CurrencyTextView
-            style="@style/CurrencyTextViewStyleK"
+        <org.fabiomsr.moneytextview.MoneyTextView
+            style="@style/MoneyTextViewStyleG"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/color_two"
-            app:baseTextColor="@color/color_one"
-            app:amount="125.3558"
-            />
-
-        <org.fabiomsr.currencytextview.CurrencyTextView
-            style="@style/CurrencyTextViewStyleM"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@color/color_one"
             app:baseTextColor="@color/color_two"
             app:amount="125.3558"
+            app:baseTextSize="28sp"
+            app:symbolTextSize="18sp"
+            app:decimalDigitsTextSize="18sp"
+            app:symbol="€"
+            />
+
+        <org.fabiomsr.moneytextview.MoneyTextView
+            style="@style/MoneyTextViewStyleI"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:baseTextColor="@color/color_two"
+            app:amount="125.3558"
+            app:baseTextSize="28sp"
+            />
+
+        <org.fabiomsr.moneytextview.MoneyTextView
+            style="@style/MoneyTextViewStyleK"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:baseTextColor="@color/color_two"
+            app:amount="125.3558"
+            app:baseTextSize="28sp"
+            app:decimalDigitsTextSize="18sp"
+            app:decimalMargin="6dp"
+            app:symbol="$"
+            />
+
+        <org.fabiomsr.moneytextview.MoneyTextView
+            style="@style/MoneyTextViewStyleM"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:baseTextColor="@color/color_two"
+            app:amount="125.3558"
+            app:baseTextSize="28sp"
+            app:decimalDigitsTextSize="18sp"
+            app:symbolTextSize="18sp"
+            app:symbol="BTC"
             />
     </LinearLayout>
 
@@ -93,74 +108,89 @@
         android:orientation="vertical"
         >
 
-        <org.fabiomsr.currencytextview.CurrencyTextView
-            style="@style/CurrencyTextViewStyleB"
+        <org.fabiomsr.moneytextview.MoneyTextView
+            style="@style/MoneyTextViewStyleB"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/color_two"
-            app:baseTextColor="@color/color_one"
-            app:amount="125.3558"
-            />
-
-        <org.fabiomsr.currencytextview.CurrencyTextView
-            style="@style/CurrencyTextViewStyleD"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@color/color_one"
             app:baseTextColor="@color/color_two"
             app:amount="125.3558"
+            app:baseTextSize="28sp"
+            app:symbol="¥"
             />
 
-        <org.fabiomsr.currencytextview.CurrencyTextView
-            style="@style/CurrencyTextViewStyleF"
+        <org.fabiomsr.moneytextview.MoneyTextView
+            style="@style/MoneyTextViewStyleD"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/color_two"
-            app:baseTextColor="@color/color_one"
-            app:amount="125.3558"
-            />
-
-        <org.fabiomsr.currencytextview.CurrencyTextView
-            style="@style/CurrencyTextViewStyleH"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@color/color_one"
             app:baseTextColor="@color/color_two"
             app:amount="125.3558"
+            app:baseTextSize="28sp"
+            app:decimalDigitsTextSize="18sp"
+            app:symbol="¥"
             />
 
-        <org.fabiomsr.currencytextview.CurrencyTextView
-            style="@style/CurrencyTextViewStyleJ"
+        <org.fabiomsr.moneytextview.MoneyTextView
+            style="@style/MoneyTextViewStyleF"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/color_two"
-            app:baseTextColor="@color/color_one"
-            app:amount="125.3558"
-            />
-
-        <org.fabiomsr.currencytextview.CurrencyTextView
-            style="@style/CurrencyTextViewStyleL"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@color/color_one"
             app:baseTextColor="@color/color_two"
             app:amount="125.3558"
+            app:baseTextSize="28sp"
+            app:symbolTextSize="18sp"
+            app:symbol="€"
             />
 
-        <org.fabiomsr.currencytextview.CurrencyTextView
-            style="@style/CurrencyTextViewStyleN"
+        <org.fabiomsr.moneytextview.MoneyTextView
+            style="@style/MoneyTextViewStyleH"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/color_two"
-            app:baseTextColor="@color/color_one"
+            app:baseTextColor="@color/color_two"
             app:amount="125.3558"
+            app:baseTextSize="28sp"
+            app:symbolTextSize="18sp"
+            app:decimalDigitsTextSize="18sp"
+            app:symbol="€"
+            />
+
+        <org.fabiomsr.moneytextview.MoneyTextView
+            style="@style/MoneyTextViewStyleJ"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:baseTextColor="@color/color_two"
+            app:amount="125.3558"
+            app:baseTextSize="28sp"
+            />
+
+        <org.fabiomsr.moneytextview.MoneyTextView
+            style="@style/MoneyTextViewStyleL"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:baseTextColor="@color/color_two"
+            app:amount="125.3558"
+            app:baseTextSize="28sp"
+            app:decimalDigitsTextSize="18sp"
+            app:decimalMargin="6dp"
+            app:symbol="$"
+            app:symbolGravity="bottom"
+            />
+
+        <org.fabiomsr.moneytextview.MoneyTextView
+            style="@style/MoneyTextViewStyleN"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:baseTextColor="@color/color_two"
+            app:amount="125.3558"
+            app:baseTextSize="28sp"
+            app:decimalDigitsTextSize="18sp"
+            app:symbolTextSize="18sp"
+            app:symbol="BTC"
             />
     </LinearLayout>
 

@@ -1,4 +1,5 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="org.fabiomsr.currencytextview">
+<manifest package="org.fabiomsr.moneytextview"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
 
 </manifest>

@@ -1,4 +1,4 @@
-package org.fabiomsr.currencytextview;
+package org.fabiomsr.library;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
