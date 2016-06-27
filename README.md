@@ -1,12 +1,12 @@
 # MoneyTextView
 
-MoneyTextView es una vista que ofrece una manera sencialla de formatear y dar estilo a canditades de dinero.
+A simple Android TextView to display amounts of money
 
 Support for Android SDK 15 and up.
 
 Example 1 | Example 2
 ---- | ----
-![Example1](/art/screenshot1) | ![Example2](/art/screenshot2)
+![Example1](/art/screenshot1.png) | ![Example2](/art/screenshot2.png)
 
 
 ## Setup
@@ -21,7 +21,7 @@ dependencies {
 
 ## Usage
 
-Añade la vista en tu layout de la siguiente forma
+Add MoneyTextView to you layout
 
 ~~~xml                                            
 
@@ -36,8 +36,7 @@ Añade la vista en tu layout de la siguiente forma
 
 #### Result
 
-
-Tambien puedes perzonalizar mas la vista
+You can also add more custom options
 
 ~~~xml
 <org.fabiomsr.moneytextview.MoneyTextView
@@ -95,34 +94,6 @@ cada una con su valor por defecto.
 | includeDecimalSeparator | Ocultar/Mostrar el separador decimal                                                                                                | boolean              | true       |
 | fontPath                | Ruta para una fuente propia                                                                                                         | string               |            |
 
-
-## Styles
-
-MoneyTextView te ofrece varios estilos por defecto que puedes usar o extender.
-
-~~~xml
-<style name="MyStyle" parent="MoneyTextViewStyleA">
-  <item name="baseTextSize">34sp</item>
-  <item name="symbolGravity">start|bottom</item>
-  <item name="decimalGravity">bottom</item>
-</style>
-~~~
-
-|         Name        |       Example       |
-|:-------------------:|:-------------------:|
-| MoneyTextViewStyleA | MoneyTextViewStyleA |
-| MoneyTextViewStyleB |                     |
-| MoneyTextViewStyleA |                     |
-| MoneyTextViewStyleA |                     |
-| MoneyTextViewStyleA |                     |
-| MoneyTextViewStyleA |                     |
-| MoneyTextViewStyleA |                     |
-| MoneyTextViewStyleA |                     |
-| MoneyTextViewStyleA |                     |
-| MoneyTextViewStyleA |                     |
-| MoneyTextViewStyleA |                     |
-| MoneyTextViewStyleA |                     |
-| MoneyTextViewStyleA |                     |
 
 
 License
