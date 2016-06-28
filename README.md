@@ -1,8 +1,8 @@
 # MoneyTextView
 
-A simple Android TextView to display amounts of money
+A custom Android TextView to display amounts of money in different formats.
 
-Support for Android SDK 15 and up.
+Minimum Android SDK supported: 15
 
 Example 1 | Example 2
 ---- | ----
@@ -11,7 +11,7 @@ Example 1 | Example 2
 
 ## Setup
 
-Puedes agregar esta librería vía gradle de esta manera.
+Provide the gradle dependency:
 
 ~~~groovy
 dependencies {
@@ -21,7 +21,7 @@ dependencies {
 
 ## Usage
 
-Add MoneyTextView to you layout
+* Include MoneyTextView in a layout xml file:
 
 ~~~xml                                            
 
@@ -34,9 +34,41 @@ Add MoneyTextView to you layout
 
 ~~~
 
-#### Result
+* Include the following code in your Activity in order to update the amount value:
 
-You can also add more custom options
+~~~java
+
+moneyTextView.setAmount(156);
+
+~~~
+
+
+## Attributes
+
+Money text view offers several attributes for a deeper view configuration, the following table shows all these options and their default value.
+
+|           Name          |                                                             Description                                                             |        Values        |   Default  |
+|:-----------------------:|:-----------------------------------------------------------------------------------------------------------------------------------:|:--------------------:|:----------:|
+| format                  | String containing a DecimalFormat valid format https://docs.oracle.com/javase/7/docs/api/java/text/DecimalFormat.html       | string               | ###,##0.00 |
+| amount                  | Amount of money to be displayed                                                                                                                  | float                | 0          |
+| baseTextSize            | Text size, if neither of decimalDigitsTextSize or symbolTextSize are specified this attribute will effect the whole text                            | sp                   | 18sp       |
+| baseTextColor           | Text size, if neither of decimalTextColor or symbolTextColor are specified this attribute will effect the whole text                                          | color                | #000000    |
+| gravity                 | Text relative position inside the view                                                                                      | top,bottom,center... | center     |
+| symbol                  | Currency Symbol                                                                                                                     | string               | $          |
+| symbolMargin            | Separation between the currency symbol and the amount                                                                                           | dp                   | 2dp        |
+| symbolTextSize          | Currency symbol text size                                                                                                       | sp                   | 18sp       |
+| symbolGravity           | Currency symbol gravity attribute | start,end,top,bottom | top,start  |
+| symbolTextColor         | Currency symbol Color                                                                                                                   | color                | #000000    |
+| decimalSeparator        | Decimal part separator character                                                                                                | string               | '          |
+| decimalMargin           | Separator between the integer part and the decimal                                                                                 | dp                   | 2dp        |
+| decimalDigitsTextSize   | Decimal part text size                                                                                               | sp                   | 18sp       |
+| decimalGravity          | Decimal part gravity attribute                                                    | top,bottom           | top        |
+| decimalTextColor        | Decimal part color                                                                                                           | color                | #000000    |
+| decimalUnderline        | Enables decimal part underlining                                                                                              | boolean              | false      |
+| includeDecimalSeparator | Hides/Shows the decimal part separator                                                                                                | boolean              | true       |
+| fontPath                | Path to a custom font                                                                                                         | string               |            |
+
+#### More settings example
 
 ~~~xml
 <org.fabiomsr.moneytextview.MoneyTextView
@@ -56,45 +88,6 @@ You can also add more custom options
         app:baseTextColor="#FBFFE3"/>
 ~~~
 
-#### Result
-
-
-### In you code
-
-~~~java
-
-moneyTextView.setAmount(156);
-
-~~~
-
-
-## Attributes
-
-MoneyTextView ofrece muchas opciones que puedes configurar, en esta tabla puedes ver
-cada una con su valor por defecto.
-
-|           Name          |                                                             Description                                                             |        Values        |   Default  |
-|:-----------------------:|:-----------------------------------------------------------------------------------------------------------------------------------:|:--------------------:|:----------:|
-| format                  | String conteniendo un formatdo valido de DecimalFormat https://docs.oracle.com/javase/7/docs/api/java/text/DecimalFormat.html       | string               | ###,##0.00 |
-| amount                  | Cantidad a mostrar                                                                                                                  | float                | 0          |
-| baseTextSize            | Tamaño del texto para toda la cantidad sino se especifica el symbolTextSize y/o el decimalDigitsTextSize                            | sp                   | 18sp       |
-| baseTextColor           | Color para toda la cantidad sino se especifica el symbolTextColor y/o el decimalTextColor                                           | color                | #000000    |
-| gravity                 | Posición relativa del texto dentro de la vista                                                                                      | top,bottom,center... | center     |
-| symbol                  | Currency Symbol                                                                                                                     | string               | $          |
-| symbolMargin            | Separación entre el simbolo y la cantidad                                                                                           | dp                   | 2dp        |
-| symbolTextSize          | Tamaño del texto del simbolo                                                                                                        | sp                   | 18sp       |
-| symbolGravity           | Gravedad del simbolo, puede ser delante o dretras de la cantidad (start, end) y alineado arriba o abajo a la cantidad (top, bottom) | start,end,top,bottom | top,start  |
-| symbolTextColor         | Color del simbolo                                                                                                                   | color                | #000000    |
-| decimalSeparator        | Caracter para separar los decimales                                                                                                 | string               | '          |
-| decimalMargin           | Separación entre la parte decimal y la parte entera                                                                                 | dp                   | 2dp        |
-| decimalDigitsTextSize   | Tamaño del texto de la parte decimal                                                                                                | sp                   | 18sp       |
-| decimalGravity          | La parte decimal puede estar alineada con la parte entera por arriba o por abajo                                                    | top,bottom           | top        |
-| decimalTextColor        | Color de la parte decimal                                                                                                           | color                | #000000    |
-| decimalUnderline        | Habilitar el subrayar la parte decimal                                                                                              | boolean              | false      |
-| includeDecimalSeparator | Ocultar/Mostrar el separador decimal                                                                                                | boolean              | true       |
-| fontPath                | Ruta para una fuente propia                                                                                                         | string               |            |
-
-
 
 License
 -------
@@ -112,3 +105,4 @@ License
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
