@@ -15,7 +15,7 @@ Provide the gradle dependency:
 
 ~~~groovy
 dependencies {
-  compile 'org.fabiomsr:moneytextview:'
+  compile 'org.fabiomsr:moneytextview:1.0.0@aar'
 }  
 ~~~
 
@@ -42,32 +42,6 @@ moneyTextView.setAmount(156);
 
 ~~~
 
-
-## Attributes
-
-Money text view offers several attributes for a deeper view configuration, the following table shows all these options and their default value.
-
-|           Name          |                                                             Description                                                             |        Values        |   Default  |
-|:-----------------------:|:-----------------------------------------------------------------------------------------------------------------------------------:|:--------------------:|:----------:|
-| format                  | String containing a DecimalFormat valid format https://docs.oracle.com/javase/7/docs/api/java/text/DecimalFormat.html       | string               | ###,##0.00 |
-| amount                  | Amount of money to be displayed                                                                                                                  | float                | 0          |
-| baseTextSize            | Text size, if neither of decimalDigitsTextSize or symbolTextSize are specified this attribute will effect the whole text                            | sp                   | 18sp       |
-| baseTextColor           | Text size, if neither of decimalTextColor or symbolTextColor are specified this attribute will effect the whole text                                          | color                | #000000    |
-| gravity                 | Text relative position inside the view                                                                                      | top,bottom,center... | center     |
-| symbol                  | Currency Symbol                                                                                                                     | string               | $          |
-| symbolMargin            | Separation between the currency symbol and the amount                                                                                           | dp                   | 2dp        |
-| symbolTextSize          | Currency symbol text size                                                                                                       | sp                   | 18sp       |
-| symbolGravity           | Currency symbol gravity attribute | start,end,top,bottom | top,start  |
-| symbolTextColor         | Currency symbol Color                                                                                                                   | color                | #000000    |
-| decimalSeparator        | Decimal part separator character                                                                                                | string               | '          |
-| decimalMargin           | Separator between the integer part and the decimal                                                                                 | dp                   | 2dp        |
-| decimalDigitsTextSize   | Decimal part text size                                                                                               | sp                   | 18sp       |
-| decimalGravity          | Decimal part gravity attribute                                                    | top,bottom           | top        |
-| decimalTextColor        | Decimal part color                                                                                                           | color                | #000000    |
-| decimalUnderline        | Enables decimal part underlining                                                                                              | boolean              | false      |
-| includeDecimalSeparator | Hides/Shows the decimal part separator                                                                                                | boolean              | true       |
-| fontPath                | Path to a custom font                                                                                                         | string               |            |
-
 #### More settings example
 
 ~~~xml
@@ -88,6 +62,33 @@ Money text view offers several attributes for a deeper view configuration, the f
         app:baseTextColor="#FBFFE3"/>
 ~~~
 
+## Attributes
+
+Money text view offers several attributes for a deeper view configuration, the following table shows all these options and their default value.
+
+|           Name          |                                                             Description                                                             |        Values        |   Default  |
+|:-----------------------:|:-----------------------------------------------------------------------------------------------------------------------------------:|:--------------------:|:----------:|
+| format                  | String containing a DecimalFormat valid format [DecimalFormat]       | string               | ###,##0.00 |
+| amount                  | Amount of money to be displayed                                                                                                                  | float                | 0          |
+| baseTextSize            | Text size, if neither of decimalDigitsTextSize or symbolTextSize are specified this attribute will effect the whole text                            | sp                   | 18sp       |
+| baseTextColor           | Text size, if neither of decimalTextColor or symbolTextColor are specified this attribute will effect the whole text                                          | color                | #000000    |
+| gravity                 | Text relative position inside the view                                                                                      | top,bottom,center... | center     |
+| symbol                  | Currency Symbol                                                                                                                     | string               | $          |
+| symbolMargin            | Separation between the currency symbol and the amount                                                                                           | dp                   | 2dp        |
+| symbolTextSize          | Currency symbol text size                                                                                                       | sp                   | 18sp       |
+| symbolGravity           | Currency symbol gravity attribute | start,end,top,bottom | top,start  |
+| symbolTextColor         | Currency symbol Color                                                                                                                   | color                | #000000    |
+| decimalSeparator        | Decimal part separator character                                                                                                | string               | '          |
+| decimalMargin           | Separator between the integer part and the decimal                                                                                 | dp                   | 2dp        |
+| decimalDigitsTextSize   | Decimal part text size                                                                                               | sp                   | 18sp       |
+| decimalGravity          | Decimal part gravity attribute                                                    | top,bottom           | top        |
+| decimalTextColor        | Decimal part color                                                                                                           | color                | #000000    |
+| decimalUnderline        | Enables decimal part underlining                                                                                              | boolean              | false      |
+| includeDecimalSeparator | Hides/Shows the decimal part separator                                                                                                | boolean              | true       |
+| fontPath                | Path to a custom font                                                                                                         | string               |            |
+
+
+
 
 License
 -------
@@ -106,3 +107,4 @@ License
     See the License for the specific language governing permissions and
     limitations under the License.
 
+[DecimalFormat]:https://docs.oracle.com/javase/7/docs/api/java/text/DecimalFormat.html

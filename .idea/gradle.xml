@@ -8,15 +8,15 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/library" />
+            <option value="$PROJECT_DIR$/example" />
+            <option value="$PROJECT_DIR$/moneytextview" />
           </set>
         </option>
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/library" />
+            <option value="$PROJECT_DIR$/example" />
+            <option value="$PROJECT_DIR$/moneytextview" />
           </set>
         </option>
       </GradleProjectSettings>

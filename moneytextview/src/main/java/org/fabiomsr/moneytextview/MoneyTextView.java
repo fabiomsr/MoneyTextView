@@ -15,7 +15,6 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
 
-import org.fabiomsr.moneytextview.R;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
