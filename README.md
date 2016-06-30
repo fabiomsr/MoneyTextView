@@ -1,3 +1,9 @@
+[ ![Download](https://api.bintray.com/packages/fabiomsr/maven/MoneyTextView/images/download.svg) ](https://bintray.com/fabiomsr/maven/MoneyTextView/_latestVersion)
+<a href="http://www.methodscount.com/?lib=org.fabiomsr%3Amoneytextview%3A%2B"><img src="https://img.shields.io/badge/Methods and size-87 | 10 KB-e91e63.svg"/></a>
+<a href="http://twitter.com/xenss"><img src="https://img.shields.io/badge/Twitter-@xenss-blue.svg" alt="Twitter" data-canonical-src="https://img.shields.io/badge/Twitter-@xenss-blue.svg" style="max-width:100%;"></a><br>
+<a href="http://twitter.com/develodroid"><img src="https://img.shields.io/badge/Twitter-@develodroid-blue.svg" alt="Twitter" data-canonical-src="https://img.shields.io/badge/Twitter-@develodroid-blue.svg" style="max-width:100%;"></a><br>
+
+
 # MoneyTextView
 
 A custom Android TextView to display amounts of money in different formats.
