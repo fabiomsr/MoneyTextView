@@ -6,7 +6,7 @@ Minimum Android SDK supported: 15
 
 Example 1 | Example 2
 ---- | ----
-![Example1](/art/screenshot1.png) | ![Example2](/art/screenshot2.png)
+![Example1](https://raw.githubusercontent.com/fabiomsr/MoneyTextView/develop/art/screenshot1.png) | ![Example2](https://raw.githubusercontent.com/fabiomsr/MoneyTextView/develop/art/screenshot2.png)
 
 
 ## Setup
