@@ -187,6 +187,8 @@ public class MoneyTextView extends View {
       case MeasureSpec.UNSPECIFIED:
         mWidth = (int) (mIntegerSection.width + mDecimalSection.width + mSymbolSection.width
             + mSymbolMargin + mDecimalMargin + getPaddingLeft() + getPaddingRight());
+        break;
+      default:break;
     }
 
     switch (heightMode) {
@@ -197,14 +199,16 @@ public class MoneyTextView extends View {
       case MeasureSpec.UNSPECIFIED:
         mHeight = getPaddingTop() + getPaddingBottom()
             + Math.max(mIntegerSection.height, Math.max(mDecimalSection.height, mSymbolSection.height));
+        break;
+      default:break;
     }
   }
 
   private void calculatePositions() {
-
     int symbolGravityXAxis = mSymbolGravity & GRAVITY_START;
     int symbolGravityYAxis = mSymbolGravity & GRAVITY_TOP;
-    int fromY, fromX;
+    int fromY;
+    int fromX;
     int width = (int) (mIntegerSection.width + mDecimalSection.width + mSymbolSection.width
         + mSymbolMargin + mDecimalMargin);
 
