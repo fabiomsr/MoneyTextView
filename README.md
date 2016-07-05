@@ -1,6 +1,7 @@
 [ ![Download](https://api.bintray.com/packages/fabiomsr/maven/MoneyTextView/images/download.svg) ](https://bintray.com/fabiomsr/maven/MoneyTextView/_latestVersion)
 <a href="http://www.methodscount.com/?lib=org.fabiomsr%3Amoneytextview%3A%2B"><img src="https://img.shields.io/badge/Methods and size-87 | 10 KB-e91e63.svg"/></a>
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MoneyTextView-green.svg?style=true)](https://android-arsenal.com/details/1/3835)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9db59b29dcc7486ea397dc5186adc490)](https://www.codacy.com/app/fabiomarcos-sr/MoneyTextView?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=fabiomsr/MoneyTextView&amp;utm_campaign=Badge_Grade)
 
 # MoneyTextView
 
