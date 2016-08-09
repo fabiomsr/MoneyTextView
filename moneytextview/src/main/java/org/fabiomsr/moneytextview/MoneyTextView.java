@@ -278,6 +278,12 @@ public class MoneyTextView extends View {
   /// SETTERS
   ///
 
+  public void setAmount(float amount, String symbol) {
+    mAmount = amount;
+    mSymbolSection.text = symbol;
+    requestLayout();
+  }
+
   public void setDecimalFormat(DecimalFormat decimalFormat) {
     mDecimalFormat = decimalFormat;
     requestLayout();
@@ -305,6 +311,11 @@ public class MoneyTextView extends View {
 
   public void setBaseTextSize(float textSize) {
     mIntegerSection.textSize = textSize;
+    requestLayout();
+  }
+
+  public void setSymbol(String symbol) {
+    mSymbolSection.text = symbol;
     requestLayout();
   }
 
