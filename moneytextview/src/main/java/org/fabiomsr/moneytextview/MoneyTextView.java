@@ -15,7 +15,6 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
 
-
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
@@ -85,6 +84,7 @@ public class MoneyTextView extends View {
     TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.MoneyTextView,
                                                                       0, R.style.MoneyTextViewDefaultStyle);
 
+
     try {
       mSymbolSection.text = typedArray.getString(R.styleable.MoneyTextView_symbol);
       mAmount = typedArray.getFloat(R.styleable.MoneyTextView_amount, 0);
@@ -101,10 +101,6 @@ public class MoneyTextView extends View {
       mSymbolSection.color = typedArray.getInt(R.styleable.MoneyTextView_symbolTextColor, mIntegerSection.color);
       mDecimalSection.color = typedArray.getInt(R.styleable.MoneyTextView_decimalTextColor, mIntegerSection.color);
       mDecimalSection.drawUnderline = typedArray.getBoolean(R.styleable.MoneyTextView_decimalUnderline, false);
-
-
-      setPadding(getMinPadding(getPaddingLeft()), getMinPadding(getPaddingTop()),
-                 getMinPadding(getPaddingRight()), getMinPadding(getPaddingBottom()));
 
       String format           = typedArray.getString(R.styleable.MoneyTextView_format);
       String decimalSeparator = typedArray.getString(R.styleable.MoneyTextView_decimalSeparator);
@@ -139,6 +135,10 @@ public class MoneyTextView extends View {
   @Override
   protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
     super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+    setPadding(getMinPadding(getPaddingLeft()), getMinVerticalPadding(getPaddingTop()),
+               getMinPadding(getPaddingRight()), getMinVerticalPadding(getPaddingBottom()));
+
     createTextFromAmount();
     calculateBounds(widthMeasureSpec, heightMeasureSpec);
     calculatePositions();
@@ -174,6 +174,7 @@ public class MoneyTextView extends View {
     mSymbolSection.calculateBounds(mTextPaint);
     mIntegerSection.calculateBounds(mTextPaint);
     mDecimalSection.calculateBounds(mTextPaint);
+
 
     if(mDecimalSection.text.length() > 1  && !Character.isDigit(mDecimalSection.text.charAt(0))) {
       mDecimalSection.calculateHeightFrom(mTextPaint, 1);
@@ -248,7 +249,6 @@ public class MoneyTextView extends View {
       mDecimalSection.x = (int) (mIntegerSection.x + mIntegerSection.width + mDecimalMargin);
     } else {
       mIntegerSection.x = from;
-      getPaddingLeft();
       mDecimalSection.x = (int) (mIntegerSection.x + mIntegerSection.width + mDecimalMargin);
       mSymbolSection.x = (int) (mDecimalSection.x + mDecimalSection.width + mSymbolMargin);
     }
@@ -336,6 +336,17 @@ public class MoneyTextView extends View {
   private int getMinPadding(int padding) {
     if(padding == 0){
       return (int) (MIN_PADDING * Resources.getSystem().getDisplayMetrics().density);
+    }
+
+    return padding;
+  }
+
+  private int getMinVerticalPadding(int padding){
+    mTextPaint.setTextSize(mDecimalSection.textSize);
+    float maximumDistanceLowestGlyph = mTextPaint.getFontMetrics().bottom;
+
+    if(padding < maximumDistanceLowestGlyph) {
+      return (int) maximumDistanceLowestGlyph;
     }
 
     return padding;

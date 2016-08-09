@@ -28,6 +28,7 @@
         app:baseTextColor="#FBFFE3"/>
 
     <org.fabiomsr.moneytextview.MoneyTextView
+        android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -35,12 +36,11 @@
         app:symbolGravity="start|bottom"
         app:decimalGravity="bottom"
         app:amount="1256.56"
-        app:decimalSeparator="."
         app:baseTextSize="54sp"
         app:symbolTextSize="30sp"
         app:decimalDigitsTextSize="30sp"
         app:decimalMargin="6dp"
-        app:includeDecimalSeparator="false"
+        app:decimalSeparator=","
         app:baseTextColor="#FBFFE3"/>
 
     <org.fabiomsr.moneytextview.MoneyTextView
