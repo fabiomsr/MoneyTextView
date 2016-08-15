@@ -175,10 +175,9 @@ public class MoneyTextView extends View {
     mIntegerSection.calculateBounds(mTextPaint);
     mDecimalSection.calculateBounds(mTextPaint);
 
+    mDecimalSection.calculateNumbersHeight(mTextPaint);
+    mIntegerSection.calculateNumbersHeight(mTextPaint);
 
-    if(mDecimalSection.text.length() > 1  && !Character.isDigit(mDecimalSection.text.charAt(0))) {
-      mDecimalSection.calculateHeightFrom(mTextPaint, 1);
-    }
 
     switch (widthMode) {
       case MeasureSpec.EXACTLY:
@@ -353,7 +352,9 @@ public class MoneyTextView extends View {
   }
 
   private int getMinVerticalPadding(int padding){
-    mTextPaint.setTextSize(mDecimalSection.textSize);
+
+    float maxTextSize = Math.max(mIntegerSection.textSize, mDecimalSection.textSize);
+    mTextPaint.setTextSize(maxTextSize);
     float maximumDistanceLowestGlyph = mTextPaint.getFontMetrics().bottom;
 
     if(padding < maximumDistanceLowestGlyph) {
@@ -385,9 +386,10 @@ public class MoneyTextView extends View {
       height = bounds.height();
     }
 
-    public void calculateHeightFrom(TextPaint paint, int from) {
+    public void calculateNumbersHeight(TextPaint paint) {
+      String numbers = text.replaceAll("[^0-9]", "");
       paint.setTextSize(textSize);
-      paint.getTextBounds(text, from, text.length(), bounds);
+      paint.getTextBounds(numbers, 0, numbers.length(), bounds);
       height = bounds.height();
     }
   }

@@ -11,7 +11,7 @@ ext {
     siteUrl = 'https://github.com/fabiomsr/MoneyTextView'
     gitUrl = 'https://github.com/fabiomsr/MoneyTextView.git'
 
-    libraryVersion = '1.0.2'
+    libraryVersion = '1.0.3'
 
     developerId = project.property('DEVELOPER_ID')
     developerName = project.property('DEVELOPER_NAME')
