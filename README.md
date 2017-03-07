@@ -20,7 +20,7 @@ Provide the gradle dependency:
 
 ~~~groovy
 dependencies {
-  compile 'org.fabiomsr:moneytextview:1.0.3'
+  compile 'org.fabiomsr:moneytextview:1.1.0'
 }  
 ~~~
 

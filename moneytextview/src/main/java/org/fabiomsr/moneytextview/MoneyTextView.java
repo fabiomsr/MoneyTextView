@@ -343,6 +343,10 @@ public class MoneyTextView extends View {
     invalidate();
   }
 
+  public float getAmount() {
+    return mAmount;
+  }
+
   private int getMinPadding(int padding) {
     if(padding == 0){
       return (int) (MIN_PADDING * Resources.getSystem().getDisplayMetrics().density);
