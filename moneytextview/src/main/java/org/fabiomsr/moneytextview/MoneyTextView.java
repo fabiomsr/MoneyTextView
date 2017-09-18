@@ -156,8 +156,8 @@ public class MoneyTextView extends View {
     int separatorIndex = formattedAmount.lastIndexOf(mDecimalSeparator);
 
     if (separatorIndex > -1) {
-      mIntegerSection.text = formattedAmount.substring(0, separatorIndex);
-      mDecimalSection.text = formattedAmount.substring(mIncludeDecimalSeparator ? separatorIndex :
+      mIntegerSection.text = formattedAmount.substring(0, separatorIndex + 1);
+      mDecimalSection.text = formattedAmount.substring(mIncludeDecimalSeparator ? separatorIndex + 1:
                                                            separatorIndex + 1);
     } else {
       mIntegerSection.text = formattedAmount;
