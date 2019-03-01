@@ -75,8 +75,8 @@ Money text view offers several attributes for a deeper view configuration, the f
 |:-----------------------:|:-----------------------------------------------------------------------------------------------------------------------------------:|:--------------------:|:----------:|
 | format                  | String containing a DecimalFormat valid format [DecimalFormat]       | string               | ###,##0.00 |
 | amount                  | Amount of money to be displayed                                                                                                                  | float                | 0          |
-| baseTextSize            | Text size, if neither of decimalDigitsTextSize or symbolTextSize are specified this attribute will effect the whole text                            | sp                   | 18sp       |
-| baseTextColor           | Text size, if neither of decimalTextColor or symbolTextColor are specified this attribute will effect the whole text                                          | color                | #000000    |
+| baseTextSize            | Text size, if neither of decimalDigitsTextSize or symbolTextSize are specified this attribute will affect the whole text                            | sp                   | 18sp       |
+| baseTextColor           | Text size, if neither of decimalTextColor or symbolTextColor are specified this attribute will affect the whole text                                          | color                | #000000    |
 | gravity                 | Text relative position inside the view                                                                                      | top,bottom,center... | center     |
 | symbol                  | Currency Symbol                                                                                                                     | string               | $          |
 | symbolMargin            | Separation between the currency symbol and the amount                                                                                           | dp                   | 2dp        |
